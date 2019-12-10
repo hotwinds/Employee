@@ -4,9 +4,9 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
 public class Employee{
-    String name, surname, sex, address;
-    int age;
-    double salary;
+    private String name, surname, sex, address;
+    private int age;
+    private double salary;
 
     public Employee (){}
 
@@ -40,52 +40,72 @@ public class Employee{
                 name,surname,age,sex,address,salary);
     }
 
-    public String toString() {return "name = " + name + "; surname = " + surname +
-           "; age = " + age + "; sex = " + sex + "; address = " + address + "; salary = " + salary;
-	}
     BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-    public String setname() throws Exception {
+    public String setName() throws Exception {
         System.out.println("Enter name of employee: ");
         this.name = reader.readLine();
         return name;
     }
 
-    public String setsurname() throws Exception {
+    public String setSurname() throws Exception {
         System.out.println("Enter surname of employee: ");
         this.surname = reader.readLine();
         return surname;
     }
 
-    public int setage() throws Exception {
+    public int setAge() throws Exception {
         System.out.println("Enter age of employee: ");
         String a = reader.readLine();
         this.age = Integer.parseInt(a);
         return age;
     }
 
-    public String setsex() throws Exception {
+    public String setSex() throws Exception {
         System.out.println("Enter sex of employee: ");
         this.sex = reader.readLine();
         return sex;
     }
 
-    public String setaddress() throws Exception{
+    public String setAddress() throws Exception{
         System.out.println("Enter address of employee: ");
         this.address = reader.readLine();
         return address;
     }
 
-    public double setsalary() throws Exception{
+    public double setSalary() throws Exception{
         System.out.println("Enter salary of employee: ");
         String s = reader.readLine();
         this.salary = Double.parseDouble(s);
         return salary;
     }
 
-    public String getname() { return name; }
-    public String getsurname() {  return surname; }
-    public int getage() { return age; }
-    public String getsex() { return sex; }
-    public String getaddress() {  return address; }
-    public double getsalary() { return salary; }
+    public String getName() { return name; }
+    public String getSurname() {  return surname; }
+    public int getAge() { return age; }
+    public String getSex() { return sex; }
+    public String getAddress() { return address;  }
+    public double getSalary() { return salary; }
+
+    @Override
+    public String toString() {return "name = " + name + "; surname = " + surname +
+            "; age = " + age + "; sex = " + sex + "; address = " + address + "; salary = " + salary;
+    }
+
+    @Override
+    public boolean equals(Object obj)
+    {
+        boolean result = false;
+        if(obj instanceof Employee)
+        {
+            Employee otherObj = (Employee) obj;
+            boolean nameEquals = this.name.equals(otherObj.name);
+            boolean surnameEquals = this.surname.equals(otherObj.surname);
+            boolean sexEquals = this.sex.equals(otherObj.sex);
+            boolean addressEquals = this.address.equals(otherObj.address);
+            boolean ageEquals = this.age == otherObj.age;
+            boolean salaryEquals = this.salary == otherObj.salary;
+            result = nameEquals || surnameEquals || sexEquals || addressEquals || ageEquals || salaryEquals;
+        }
+        return result;
+    }
 }

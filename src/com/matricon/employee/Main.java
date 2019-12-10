@@ -10,7 +10,7 @@ import java.util.AbstractCollection;
 
 public class Main {
             public static void main(String[] args) throws Exception {
-                ArrayList <Employee> EmployeeManager = new ArrayList <>();
+                ArrayList <Employee> EmployeeArrayList = new ArrayList <>();
 //                Employee newEmployee = new Employee();
                 BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
                 int x = 0;
@@ -39,14 +39,14 @@ public class Main {
                                 newEmployee.setSex();
                                 newEmployee.setAddress();
                                 newEmployee.setSalary();
-                                EmployeeManager.add(newEmployee);
+                                EmployeeArrayList.add(newEmployee);
                             }
-                            for (Object empl : EmployeeManager) {
+                            for (Object empl : EmployeeArrayList) {
                                 System.out.println(empl);
                             }
                             break;
                         case 2:
-                            for (Object empl : EmployeeManager) {
+                            for (Object empl : EmployeeArrayList) {
                                 System.out.println(empl);
                             }
                             break;
@@ -56,17 +56,17 @@ public class Main {
                         case 4:
                             File txtFile = FileExport.createTextFileAbsolute();
                             FileWriter writer = new FileWriter(txtFile);
-                            for(int i=0; i<EmployeeManager.size(); i++) {
-                            writer.write(Employee.getName() + " " +
-                                    Employee.getSurname() + " " +
-                                    Employee.getAge() + " " +
-                                    Employee.getSex() + " " +
-                                    Employee.getAddress() + " " +
-                                    Employee.getSalary() );
+                            for(int i=0; i<EmployeeArrayList.size(); i++) {
+                            writer.write("Name  " + "Surname " + "Age    " + "Sex    " + "Address " + "Salary " + "\n" +
+                                    EmployeeArrayList.get(i).getName() + " " +
+                                    EmployeeArrayList.get(i).getSurname() + " " +
+                                    EmployeeArrayList.get(i).getAge() + " " +
+                                    EmployeeArrayList.get(i).getSex() + " " +
+                                    EmployeeArrayList.get(i).getAddress() + " " +
+                                    EmployeeArrayList.get(i).getSalary() + "\n");
+                                    writer.append("\n");
                             }
                             writer.close();
-
-                            //System.out.println("4. Export employee");
                             break;
                         case 5:
                             System.out.println("5. Import employee");
@@ -74,14 +74,14 @@ public class Main {
                         case 6:
                             System.out.println("Enter searched parameter: ");
                             String search = reader.readLine();
-                            for(int i=0; i<EmployeeManager.size(); i++)
+                            for(int i=0; i<EmployeeArrayList.size(); i++)
                             {
-                                    if(Employee.getName().equals(search) ||
-                                            Employee.getSurname().equals(search) ||
-                                            Employee.getAge() == search ||
-                                            Employee.getSex().equals(search) ||
-                                            Employee.getAddress().equals(search) ||
-                                            Employee.getSalary() == search)
+                                    if(EmployeeArrayList.get(i).getName().equals(search) ||
+                                            EmployeeArrayList.get(i).getSurname().equals(search) ||
+                                            EmployeeArrayList.get(i).getAge().equals(search) ||
+                                            EmployeeArrayList.get(i).getSex().equals(search) ||
+                                            EmployeeArrayList.get(i).getAddress().equals(search) ||
+                                            EmployeeArrayList.get(i).getSalary().equals(search))
                                     System.out.println("arrayList contains " + search);
                                 else System.out.println("arraylist doesn't contain " + search);
                             }

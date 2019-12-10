@@ -1,0 +1,6 @@
+Name  Surname Age    Sex    Address Salary 
+Petr Ivanov 21 man Chisinau 6500.0
+
+Name  Surname Age    Sex    Address Salary 
+Alla Petrov 19 woman Chisinau 7000.0
+

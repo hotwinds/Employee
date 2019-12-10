@@ -5,8 +5,8 @@ import java.io.InputStreamReader;
 
 public class Employee{
     private String name, surname, sex, address;
-    private int age;
-    private double salary;
+    private Integer age;
+    private Double salary;
 
     public Employee (){}
 
@@ -15,22 +15,22 @@ public class Employee{
         this.surname = surname;
     }
 
-    public Employee(String name, String surname, int age){
+    public Employee(String name, String surname, Integer age){
         this(name, surname);
         this.age = age;
     }
 
-    public Employee(String name, String surname, int age, String sex){
+    public Employee(String name, String surname, Integer age, String sex){
         this(name, surname, age);
         this.sex = sex;
     }
 
-    public Employee(String name, String surname, int age, String sex, String address){
+    public Employee(String name, String surname, Integer age, String sex, String address){
         this(name, surname, age, sex);
         this.address = address;
     }
 
-    public Employee(String name, String surname, int age, String sex, String address, double salary){
+    public Employee(String name, String surname, Integer age, String sex, String address, Double salary){
         this(name, surname, age, sex, address);
         this.salary = salary;
     }
@@ -53,7 +53,7 @@ public class Employee{
         return surname;
     }
 
-    public int setAge() throws Exception {
+    public Integer setAge() throws Exception {
         System.out.println("Enter age of employee: ");
         String a = reader.readLine();
         this.age = Integer.parseInt(a);
@@ -72,7 +72,7 @@ public class Employee{
         return address;
     }
 
-    public double setSalary() throws Exception{
+    public Double setSalary() throws Exception{
         System.out.println("Enter salary of employee: ");
         String s = reader.readLine();
         this.salary = Double.parseDouble(s);
@@ -81,10 +81,10 @@ public class Employee{
 
     public String getName() { return name; }
     public String getSurname() {  return surname; }
-    public int getAge() { return age; }
+    public Integer getAge() { return age; }
     public String getSex() { return sex; }
     public String getAddress() { return address;  }
-    public double getSalary() { return salary; }
+    public Double getSalary() { return salary; }
 
     @Override
     public String toString() {return "name = " + name + "; surname = " + surname +
@@ -102,8 +102,8 @@ public class Employee{
             boolean surnameEquals = this.surname.equals(otherObj.surname);
             boolean sexEquals = this.sex.equals(otherObj.sex);
             boolean addressEquals = this.address.equals(otherObj.address);
-            boolean ageEquals = this.age == otherObj.age;
-            boolean salaryEquals = this.salary == otherObj.salary;
+            boolean ageEquals = this.age.equals(otherObj.age);
+            boolean salaryEquals = this.salary.equals(otherObj.salary);
             result = nameEquals || surnameEquals || sexEquals || addressEquals || ageEquals || salaryEquals;
         }
         return result;

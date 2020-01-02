@@ -1,6 +1,34 @@
 Name  Surname Age    Sex    Address Salary 
-Petr Ivanov 21 man Chisinau 6500.0
 
-Name  Surname Age    Sex    Address Salary 
-Alla Petrov 19 woman Chisinau 7000.0
+Petr Scvortov 30 Male Chisinau 8000.0
+
+
+Alexey Konev 32 Male Chisinau 6500.0
+
+
+Petr Ivanov 32 Male Balti 6000.0
+
+
+Ivan Petrov 29 Male Chisinau 6500.0
+
+
+Nikita Moiseev 32 Male Chisinau 7000.0
+
+
+Alla Moroz 24 Female Chisinau 7000.0
+
+
+Victoria Mashkov 29 Female Chisinau 8000.0
+
+
+Dasha Petrichin 27 Female Chisinau 6000.0
+
+
+Masha Kostrov 21 Female Balti 7500.0
+
+
+Elena Trifonov 32 Female Balti 8500.0
+
+
+Fedor Sidorov 25 Male Comrat 8000.0
 
